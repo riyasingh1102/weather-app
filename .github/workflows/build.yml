@@ -1,24 +1,22 @@
 name: Build React + Vite App
 
-on:
+on:  
   push:
-     branches: [develop]
+    branches: [master]
 
-  jobs:
-    build: 
-      runs on: ubuntu-latest   
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js 
+        uses: actions/Setup-node@v3
         with:
-         node-version: 18
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Build Vite Project
-        run: npm run build
+        run: npm run install
+        
